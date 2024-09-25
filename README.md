@@ -34,15 +34,17 @@ For CIC shape function,
 $$W(\Delta)=1-|\Delta|~~{\rm if}~|\Delta|<1,~~\Delta=\frac{x_p-x_c}{dx}$$
 
 # Procedure
-1：$`\vec{v}_ p^{n-1/2} \Rightarrow \vec{v}_ p^{n+1/2}`$ using Boris push in nonrelativistic case and Vay push in relativistic case.
+0: Initial: $`\vec{x}^0,\vec{v}^0,\vec{E}^0=0,\vec{B}^0=0`$
 
-2：$`\vec{x}_ p^ {n+1}=\vec{x}_ p^ {n} + \vec{v}_ p^ {n+1/2}dt`$.
+1: Initialization: $`\vec{v}^{-1/2},\vec{B}^{1/2}~~~\Rightarrow~~~x^0,v^{-1/2},E^0,B^0,B^{1/2}`$
 
-3: Use $`\vec{x}_p^{n},\vec{x}_p^{n+1},\vec{v}_p^{n+1/2}`$ calculate $\vec{J}_c^{n+1/2}$
+2: n-th time step: We have $`x^n,x^{n-1},v^{n-1/2},E^n,B^n,B^{n+1/2},J^{n-1/2}`$, 
 
-4: Solve Maxwell equations;
+$$E^n,B^n\Rightarrow a^n\Rightarrow v^{n+1/2}\Rightarrow x^{n+1}\rightarrow[x^n,x^{n+1},v^{n+1/2},E^n,B^n,B^{n+1/2},J^{n-1/2}]$$ (Boris push or Vay push. Done.)
 
-5: Gather.
+$$x^n,x^{n+1},v^{n+1/2}\Rightarrow J^{n+1/2}\rightarrow [x^n,x^{n+1},v^{n+1/2},E^n,B^n,B^{n+1/2},J^{n+1/2}]$$ (zigzag method. Done.)
+
+$$J^{n+1/2},B^{n+1/2}\Rightarrow E^{n+1}\Rightarrow B^{n+3/2},B^{n+1}\rightarrow [x^n,x^{n+1},v^{n+1/2},E^{n+1},B^{n+1},B^{n+3/2},J^{n+1/2}]$$(Solve Maxwell equations. Doing)
 
 ## Charge conserved method
 ```math
