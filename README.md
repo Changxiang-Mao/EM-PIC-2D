@@ -34,11 +34,15 @@ For CIC shape function,
 $$W(\Delta)=1-|\Delta|~~{\rm if}~|\Delta|<1,~~\Delta=\frac{x_p-x_c}{dx}$$
 
 # Procedure
-1：$\vec{v}_ p^{n-1/2} \Rightarrow \vec{v}_ p^{n+1/2}$ using Boris push in nonrelativistic case and Vay push in relativistic case.
+1：$`\vec{v}_ p^{n-1/2} \Rightarrow \vec{v}_ p^{n+1/2}`$ using Boris push in nonrelativistic case and Vay push in relativistic case.
 
+2：$`\vec{x}_ p^ {n+1}=\vec{x}_ p^ {n} + \vec{v}_ p^ {n+1/2}dt`$.
 
+3: Use $`\vec{x}_p^{n},\vec{x}_p^{n+1},\vec{v}_p^{n+1/2}`$ calculate $\vec{J}_c^{n+1/2}$
 
+4: Solve Maxwell equations;
 
+5: Gather.
 
 
 
