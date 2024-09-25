@@ -63,6 +63,19 @@ $$W(\Delta)=1-|\Delta|~~{\rm if}~|\Delta|<1,~~\Delta=\frac{x_p-x_c}{dx}$$
 \end{equation}
 ```
 
+# Interpolation on Yee grid
+The Yee lattice is assigned as below.
+
+![./image](Yee_lattice.png)
+
+```math
+\begin{equation}
+\begin{aligned}
+
+\end{aligned}
+\end{equation}
+```
+
 
 
 
