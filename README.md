@@ -68,10 +68,26 @@ The Yee lattice is assigned as below.
 
 ![./image](Yee_lattice.png)
 
+$$f_x=\frac{x_p-x_i}{dx},~~f_y=\frac{y_p-y_j}{dy}$$
+
 ```math
 \begin{equation}
 \begin{aligned}
-
+{\rm I:~}&Ex:~i,i-1;j,j+1;~~~\Delta_x=f_x+0.5,&\Delta_y=f_y\\
+&Ey:~i,i+1;j,j-1;~~~\Delta_x=f_x,&\Delta_y=f_y+0.5\\
+&Bz:~i,i-1;j,j-1;~~~\Delta_x=f_x+0.5,&\Delta_y=f_y+0.5\\
+&-------------&------\\
+{\rm II:~}&Ex:~i,i+1;j,j+1;~~~\Delta_x=f_x-0.5,&\Delta_y=f_y\\
+&Ey:~i,i+1;j,j-1;~~~\Delta_x=f_x,&\Delta_y=f_y+0.5\\
+&Bz:~i,i+1;j,j-1;~~~\Delta_x=f_x-0.5,&\Delta_y=f_y+0.5\\
+&-------------&------\\
+{\rm III:~}&Ex:~i,i-1;j,j+1;~~~\Delta_x=f_x+0.5,&\Delta_y=f_y\\
+&Ey:~i,i+1;j,j+1;~~~\Delta_x=f_x,&\Delta_y=f_y-0.5\\
+&Bz:~i,i-1;j,j+1;~~~\Delta_x=f_x+0.5,&\Delta_y=f_y-0.5\\
+&-------------&------\\
+{\rm IV:~}&Ex:~i,i+1;j,j+1;~~~\Delta_x=f_x-0.5,&\Delta_y=f_y\\
+&Ey:~i,i+1;j,j+1;~~~\Delta_x=f_x,&\Delta_y=f_y-0.5\\
+&Bz:~i,i+1;j,j+1;~~~\Delta_x=f_x-0.5,&\Delta_y=f_y-0.5\\
 \end{aligned}
 \end{equation}
 ```
