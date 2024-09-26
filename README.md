@@ -69,6 +69,7 @@ $$J^{n+1/2},B^{n+1/2}\Rightarrow E^{n+1}\Rightarrow B^{n+3/2},B^{n+1}\rightarrow
 The Yee lattice is assigned as below.
 
 ![./image](Yee_lattice.png)
+![./image](nabla.png)
 
 $$f_x=\frac{x_p-x_i}{dx},~~f_y=\frac{y_p-y_j}{dy}$$
 
@@ -94,12 +95,36 @@ $$f_x=\frac{x_p-x_i}{dx},~~f_y=\frac{y_p-y_j}{dy}$$
 \end{equation}
 ```
 
+# Curl of field
 
+$$\frac{\partial\vec{B}}{\partial t}=-c\nabla\times\vec{E},~~~\frac{\partial\vec{E}}{\partial t}=c\nabla\times\vec{B}-4\pi\vec{J}$$
 
+```math
+\begin{equation}
+\begin{matrix}
+\frac{\partial B_z}{\partial t}=c(\partial_yE_x-\partial_xE_y)\\
+\frac{\partial E_x}{\partial t}=c\partial_yB_z-4\pi J_x\\
+\frac{\partial E_y}{\partial t}=-c\partial_xB_z-4\pi J_y
+\end{matrix}\Rightarrow
+\begin{matrix}
+\frac{\partial B_z}{\partial t}|^{n+1}_{i+1/2,j+1/2}=c(\partial_yE_x-\partial_xE_y)|^{n+1}_{i+1/2,j+1/2}\\
+\frac{\partial E_x}{\partial t}|^{n+1/2}_{i+1/2,j}=c\partial_yB_z|^{n+1/2}_{i+1/2,j}-4\pi J_x|^{n+1/2}_{i+1/2,j}\\
+\frac{\partial E_y}{\partial t}|^{n+1/2}_{i,j+1/2}=-c\partial_xB_z|^{n+1/2}_{i,j+1/2}-4\pi J_y|^{n+1/2}_{i,j+1/2}
+\end{matrix}
+\end{equation}
+```
 
+$$E_ x|^{n+1}_ {ij}=E_ x|^n_ {ij}+(c\partial_ yB_ z-4\pi J_ x)|^{n+1/2}_ {ij}dt$$
 
+$$E_ y|^{n+1}_ {ij}=E_ y|^n_ {ij}+(-c\partial_ xB_ z-4\pi J_ y)|^{n+1/2}_ {ij}dt$$
 
+$$B_ z|^{n+3/2}_ {ij}=B_ z|^{n+1/2}_ {ij}+c(\partial_ yE_ x-\partial_ xE_ y)|^{n+1}_ {ij}dt$$
 
+$$E_ x|^{n+1}_ {ij}=E_ x|^n_ {ij}+\left(c\frac{B_ z|^{n+1/2}_ {ij}-B_ z|^{n+1/2}_ {i,j-1}}{dy}-4\pi J_ x|^{n+1/2}_ {ij}\right)dt$$
+
+$$E_ y|^{n+1}_ {ij}=E_ y|^n_ {ij}+\left(-c\frac{B_ z|^{n+1/2}_ {ij}-B_ z|^{n+1/2}_ {i-1,j}}{dx}-4\pi J_ y|^{n+1/2}_ {ij}\right)dt$$
+
+$$B_ z|^{n+3/2}_ {ij}=B_ z|^{n+1/2}_ {ij}+c\left(\frac{E_x|^{n+1}_ {i,j+1}-E_x|^{n+1}_ {i,j}}{dy}-\frac{E_y|^{n+1}_ {i+1,j}-E_y|^{n+1}_ {i,j}}{dx}\right)dt$$
 
 
 
