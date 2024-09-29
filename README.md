@@ -126,6 +126,28 @@ $$E_ y|^{n+1}_ {ij}=E_ y|^n_ {ij}+\left(-c\frac{B_ z|^{n+1/2}_ {ij}-B_ z|^{n+1/2
 
 $$B_ z|^{n+3/2}_ {ij}=B_ z|^{n+1/2}_ {ij}+c\left(\frac{E_x|^{n+1}_ {i,j+1}-E_x|^{n+1}_ {i,j}}{dy}-\frac{E_y|^{n+1}_ {i+1,j}-E_y|^{n+1}_ {i,j}}{dx}\right)dt$$
 
+# Vay pusher algorithm
+We want to calculate $`\vec{v}^{i+1/2}`$ from $`\vec{v}^{i-1/2},\vec{E}^i,\vec{B}^i`$.
+
+```math
+\begin{equation}
+\begin{aligned}
+&1.~~A=\frac{qdt}{2m},~~\gamma^{i-1/2}=\frac{1}{\sqrt{1-(v^{i-1/2})^2/c^2}},~~\vec{u}^{i-1/2}=\gamma^{i-1/2}\vec{v}^{i-1/2}\\
+&2.~~\vec{u}^i=\vec{u}^{i-1/2}+A(\vec{E}^i+\vec{v}^{i-1/2}\times\vec{B}^i)\\
+&3.~~\vec{u}'=\vec{u}^i+A\vec{E}^i~~~~~~\Rightarrow~~~~~~\vec{u}^{i+1/2}=\vec{u}'+A\frac{\vec{u}^{i+1/2}}{\gamma^{i+1/2}}\times\vec{B}^i\\
+&4.~~\gamma'=\sqrt{1+u'^2/c^2},\vec{\tau}=A\vec{B}^i,u^*=\vec{u}'\cdot\vec{\tau}/c,\sigma=\gamma'^2-\tau^2\\
+&5.~~\gamma^{i+1/2}=\sqrt{\frac{\sigma+\sqrt{\sigma^2+4(\tau^2+u^{*2})}}{2}},\vec{t}=\frac{\vec{\tau}}{\gamma^{i+1/2}},s=\frac{1}{1+t^2}\\
+&6.~~\vec{u}^{i+1/2}=s[\vec{u}'+(\vec{u}'\cdot\vec{t})\vec{t}+\vec{u}'\times\vec{t}]\\
+&7.~~\vec{v}^{i+1/2}=\vec{u}^{i+1/2}/\gamma^{i+1/2}
+\end{aligned}
+\end{equation}
+```
+
+
+
+
+
+
 
 
 
